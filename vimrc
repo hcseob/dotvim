@@ -37,7 +37,7 @@ nnoremap <leader>I :VerilogFollowPort<CR>
 nnoremap <leader>u :VerilogGotoInstanceStart<CR>
 runtime macros/matchit.vim
 let g:SuperTabDefaultCompletionType='context'
-let g:verilog_syntax_fold_lst="class,function,task,instance,module" 
+let g:verilog_syntax_fold_lst="class,function,task,instance" 
 " CTRL-X CTRL-O to use omni completion without SuperTab (ctags needs to be created) and just TAB with super tab
 " echo ~/bin/ctags.sh > /usr/local/bin/ctags -R --extras=+q --fields=+i
 " :VerilogErrorFormat vcs 2

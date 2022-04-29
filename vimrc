@@ -1,5 +1,5 @@
-set nocompatible              " be iMproved, required
-filetype off                  " required
+set nocompatible              " be iMproved, required by Vundle
+filetype off                  " required by Vundle
 let mapleader = "," " needs to proceed any commands that mapped with leader
 
 " set the runtime path to include Vundle and initialize
@@ -11,7 +11,10 @@ Plugin 'VundleVim/Vundle.vim'
 
 " my plugins
 Plugin 'vhda/verilog_systemverilog.vim'
+Plugin 'vimtaku/hl_matchit.vim'
 Plugin 'sickill/vim-monokai'
+Plugin 'ervandew/supertab'
+Plugin 'preservim/tagbar'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -32,6 +35,11 @@ set foldmethod=syntax
 nnoremap <leader>i :VerilogFollowInstance<CR>
 nnoremap <leader>I :VerilogFollowPort<CR>
 nnoremap <leader>u :VerilogGotoInstanceStart<CR>
+runtime macros/matchit.vim
+let g:SuperTabDefaultCompletionType='context'
+let g:verilog_syntax_fold_lst="class,function,task,instance,module" 
+" CTRL-X CTRL-O to use omni completion without SuperTab (ctags needs to be created) and just TAB with super tab
+" echo ~/bin/ctags.sh > /usr/local/bin/ctags -R --extras=+q --fields=+i
 " :VerilogErrorFormat vcs 2
 " :set makeprg=vcs\ -full64\ %
 " :cnext
